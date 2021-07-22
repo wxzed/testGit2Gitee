@@ -32,3 +32,4 @@ jobs:
           # account_type: org
           # 直接取当前项目的仓库名
           static_list: ${{ github.event.repository.name }}
+          
