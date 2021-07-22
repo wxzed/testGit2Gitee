@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Mirror the Github repos to Gitee.
-      uses: wxzed/hub-mirror-action@master
+      uses: Yikun/hub-mirror-action@132b206a796926508b73fe82e9f3bb0969a3add6
       with:
         src: 'github/${{ github.repository_owner }}'
         dst: 'gitee/${{ secrets.GITEE_USER }}'
