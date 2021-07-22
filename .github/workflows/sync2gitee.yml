@@ -1,0 +1,19 @@
+# 通过 Github action， 在仓库的每一次 commit 后自动同步到 Gitee 上
+name: sync2gitee
+on:
+  push:
+    branches:
+      - master
+jobs:
+  run:
+    name: Sync-GitHub-to-Gitee
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the Github repos to Gitee.
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: github/wxzed/testGit2Gitee
+        dst: gitee/zed_wu/testGit2Gitee
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        force_update: true
