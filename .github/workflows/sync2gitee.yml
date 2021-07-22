@@ -12,9 +12,8 @@ jobs:
     - name: Mirror the Github repos to Gitee.
       uses: wxzed/hub-mirror-action@master
       with:
-        src: github/wxzed
-        dst: gitee/zed_wu
+        src: 'github/${{ github.repository_owner }}'
+        dst: 'gitee/${{ secrets.GITEE_USER }}'
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
         static_list: ${{ github.event.repository.name }}
-        force_update: true
